@@ -1,3 +1,7 @@
+"""
+Day 1 - Basic Practice Programs
+"""
+import math
 # Calculator
 a = 20
 b = 30
@@ -6,16 +10,15 @@ addition = a + b
 subtraction = b - a
 multiplication = a * b
 division = a / b
-print(f'addition : {addition}, subtraction : {subtraction}, multiplication : {multiplication}, division: {multiplication}' ,sep=', ')
+print(f'addition : {addition}, subtraction : {subtraction}, multiplication : {multiplication}, division: {division}')
 
 # Temperature converter
 celsius = 49.5
 
 fahrenheit = (celsius * 9 / 5) + 32
-print(f'temperature in celsius : {celsius}, temperature in fahrenheit : {fahrenheit}' ,sep=', ')
+print(f'temperature in celsius : {celsius}, temperature in fahrenheit : {fahrenheit}')
 
 # Area of circle
-import  math
 radius = 5
 area_of_circle = math.pi * radius ** 2
 print(f'area of circle : {area_of_circle}')
@@ -30,27 +33,27 @@ print(f'area of rectangle : {area_of_rectangle}')
 
 # Simple interest
 
-principal =800000
+principal = 800000
 time = 5
 rate = 16
 
-simple_interest = (principal * time * rate) / 12
+simple_interest = (principal * rate * time) / 100
 print(f'simple interest : {simple_interest}')
 
 # Swap two numbers
 i = 10
 j = 20
 
-print(f'before swaping : {i} and {j}')
+print(f'before swapping : {i} and {j}')
 i,j = j,i
-print(f'after swaping : {i} and {j}')
+print(f'after swapping : {i} and {j}')
 
 # Even or Odd checker
 num = 40
 if num % 2 == 0:
-    print(f'{num} is a even number')
+    print(f'{num} is an even number')
 else:
-    print(f'{num} is a odd number')
+    print(f'{num} is an odd number')
 
 # Largest between 2 numbers
 
