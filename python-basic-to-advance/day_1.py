@@ -1,5 +1,17 @@
-# declaring the variables
-name = 'vinod'
+"""
+Day 1 - Python Fundamentals
+Topics Covered:
+- Variables
+- Data Types
+- Type Conversion
+- Operators (Arithmetic, Assignment, Comparison, Logical)
+"""
+
+# ----------------------------
+# Variables
+# ----------------------------
+
+name = "vinod"
 age = 25
 company = "Soft Tech"
 designation = "Technology Analyst"
@@ -8,25 +20,95 @@ is_permanent_employee = True
 lpa = 8.5
 
 
-# Data types
-print(type(name))   # string
-print(type(age))    # integer
-print(type(lpa))    #  float
-print(type(is_permanent_employee)) # boolean
+# ----------------------------
+# Data Types
+# ----------------------------
 
-# type conversion
+print(type(name))                     # str
+print(type(age))                      # int
+print(type(lpa))                      # float
+print(type(is_permanent_employee))    # bool
+
+
+# ----------------------------
+# Type Conversion
+# ----------------------------
+
 lpa = int(lpa)
-print(type(lpa)) # integer
+print(type(lpa))                      # int
 
 salary = float(salary)
-print(type(salary))
+print(type(salary))                   # float
 
 age = str(age)
-print(type(age))
+print(type(age))                      # str
 
-name = int(name)
-print(type(name)) # incase try to convert the string into integer it will give a ValueError
+# Converting non-numeric string to int will raise ValueError
+# Example:
+# name = int(name)
 
-company = int(company)
-print(type(company)) # incase try to convert the string into integer it will give a ValueError
 
+# ----------------------------
+# Arithmetic Operators
+# ----------------------------
+
+a = 10
+b = 20
+
+print(a + b)     # Addition
+print(a - b)     # Subtraction
+print(a * b)     # Multiplication
+print(a / b)     # Division
+print(a % b)     # Modulus
+print(a // b)    # Floor Division
+
+
+# ----------------------------
+# Assignment Operators
+# ----------------------------
+
+c, d = 10, 20
+
+c += d
+print(c)
+
+c -= d
+print(c)
+
+c *= d
+print(c)
+
+c /= d
+print(c)
+
+c %= d
+print(c)
+
+c **= d
+print(c)
+
+c //= d
+print(c)
+
+
+# ----------------------------
+# Comparison Operators
+# ----------------------------
+
+e, f = 10, 40
+
+print(e == f)
+print(e != f)
+print(e > f)
+print(e < f)
+print(e >= f)
+print(e <= f)
+
+
+# ----------------------------
+# Logical Operators
+# ----------------------------
+
+print(e == f and e != f)
+print(e == f or e != f)
+print(not (e == f))
