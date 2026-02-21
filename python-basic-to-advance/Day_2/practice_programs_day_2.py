@@ -37,11 +37,11 @@ elif number < 0:
 else:
     print(f'{number} is equal zero')
 
-if number != 0:
-    if number % 2 == 0:
-        print(f"{number} is a even number")
-    else:
-        print(f"{number} is a odd number")
+
+if number % 2 == 0:
+    print(f"{number} is a even number")
+else:
+    print(f"{number} is a odd number")
 
 
 #### Program 3 — Largest of 3 Numbers ####
@@ -71,8 +71,8 @@ Take age as input. If 18 or above print eligible, else print how many years are 
 
 age = int(input("Please enter your age: "))
 
-if age < 0:
-    print("Invalid age entered")
+if age < 0 or age > 120:
+    print("Invalid age !")
 elif age >= 18:
     print("You are eligible to vote")
 else:
@@ -97,17 +97,20 @@ Set a hardcoded username and password.
 Take input from user. Print a specific message for: correct login, wrong password only, wrong username only, both wrong.
 """
 
-username = "Anandkumar"
-password = "Vinu@041722"
+correct_username = "Anandkumar"
+correct_password = "Vinu@041722"
 
-if username == "Anandkumar" and password == "Vinu@041722" :
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == correct_username and password == correct_password :
     print("Login Successful")
-elif username != "Anandkumar"  :
+elif username != correct_username and password != correct_password :
+    print("Login Unsuccessful, wrong username and password !! Try Again")
+elif username != correct_username :
     print("Login Unsuccessful, incorrect username !! Try Again")
-elif password != "Vinu@041722" :
-    print("Login Unsuccessful, incorrect password !! Try Again")
 else:
-    print("Login Unsuccessful, incorrect username and password!! Try Again")
+    print("Login Unsuccessful, incorrect password!! Try Again")
 
 #### Program 7 — Triangle Type ####
 
@@ -288,54 +291,57 @@ Print annual and monthly premium.
 base_premium = 5000
 
 age = int(input("Enter your age: "))
-smoking_habit = input("Do you smoke? (yes/no): ").lower()
+smoking_habit = input("Do you smoke? (yes/no): ").lower().strip()
 bmi = float(input("Enter your BMI: "))
 
 premium = base_premium
 
 # Age adjustment
-if 18 <= age <= 30:
-    premium += premium * 0.05
-elif 31 <= age <= 45:
-    premium += premium * 0.10
-elif 46 <= age <= 60:
-    premium += premium * 0.20
-elif age > 60:
-    premium += premium * 0.30
+if age < 18:
+    print("Insurance not available below 18 years")
+else:
+    if 18 <= age <= 30:
+        premium += premium * 0.05
+    elif 31 <= age <= 45:
+        premium += premium * 0.10
+    elif 46 <= age <= 60:
+        premium += premium * 0.20
+    elif age > 60:
+        premium += premium * 0.30
 
-# BMI adjustment
-if bmi < 18.5:
-    premium += premium * 0.05
-elif 25 <= bmi <= 29.9:
-    premium += premium * 0.10
-elif bmi >= 30:
-    premium += premium * 0.20
-# Normal BMI (18.5–24.9) → no extra charge
+    # BMI adjustment
+    if bmi < 18.5:
+        premium += premium * 0.05
+    elif 25 <= bmi <= 29.9:
+        premium += premium * 0.10
+    elif bmi >= 30:
+        premium += premium * 0.20
+    # Normal BMI (18.5–24.9) → no extra charge
 
-# Smoking adjustment
-if smoking_habit in ["yes", "y"]:
-    premium += premium * 0.25
+    # Smoking adjustment
+    if smoking_habit in ["yes", "y"]:
+        premium += premium * 0.25
 
-annual_premium = premium
-monthly_premium = annual_premium / 12
+    annual_premium = premium
+    monthly_premium = annual_premium / 12
 
-print(f"Annual Premium: ₹{annual_premium:.2f}")
-print(f"Monthly Premium: ₹{monthly_premium:.2f}")
+    print(f"Annual Premium: ₹{annual_premium:.2f}")
+    print(f"Monthly Premium: ₹{monthly_premium:.2f}")
 
 #### Program 14 — Rock Paper Scissors ####
 
-player_choice = input("choose one : rock, paper, scissor : ").lower()
-computer_choice = ["rock", "paper", "scissor"]
+player_choice = input("choose one : rock, paper, scissors : ").lower()
+computer_choice = ["rock", "paper", "scissors"]
 rand = random.choice(computer_choice).lower()
 print(f"computer choice is {rand}")
 
-if player_choice not in ["rock", "paper", "scissor"]:
+if player_choice not in ["rock", "paper", "scissors"]:
     print("Invalid choice")
 elif player_choice == rand:
     print("It's a draw")
-elif player_choice == "rock" and rand == "scissor":
+elif player_choice == "rock" and rand == "scissors":
     print("User wins")
-elif player_choice == "scissor" and rand == "paper":
+elif player_choice == "scissors" and rand == "paper":
     print("User wins")
 elif player_choice == "paper" and rand == "rock":
     print("User wins")
@@ -349,9 +355,9 @@ Take 3 item prices as input. Calculate total.
 Apply rules: if total > ₹500 apply 10% discount, if customer pays cash apply extra 2% discount (ask payment method). 
 Print itemized bill with final total.
 """
-book = 300
-pen = 400
-charts = 300
+book   = float(input("Enter price of item 1: ₹"))
+pen    = float(input("Enter price of item 2: ₹"))
+charts = float(input("Enter price of item 3: ₹"))
 
 total = book + pen + charts
 print(f" Total before discount: {total:.2f}")
@@ -363,7 +369,7 @@ else:
 
 amount_after_discount = total - discount
 
-payment_method = input("Enter Payment Method (Cash/Online) : ").lower()
+payment_method = input("Enter Payment Method (Cash/Online) : ").lower().strip()
 
 if payment_method == "cash":
     cash_discount = amount_after_discount * 0.02
